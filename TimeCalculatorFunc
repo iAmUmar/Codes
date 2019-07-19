@@ -1,0 +1,16 @@
+  public string GetTimeFormat(float givenTime) {
+      float seconds, minutes;
+      string sec= "00", min = "00";
+      seconds = givenTime % 60;
+      minutes = givenTime / 60;
+      min = Mathf.FloorToInt(minutes).ToString();
+      sec = Mathf.FloorToInt(seconds).ToString();
+      if(minutes <= 9) {
+          min = "0" + min;
+      }
+      if(seconds <= 9) {
+          sec = "0" + sec;
+      }
+      string time = "Time = " + min + ":" + sec;
+      return time;
+  }
